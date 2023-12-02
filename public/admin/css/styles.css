@@ -5,7 +5,7 @@
 }
 
 .hero_banner{
-    background-image: url(./Public/assets/chocolate/background.png) ;
+    background-image: url(/assets/chocolate/background.png) ;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #2c66da;

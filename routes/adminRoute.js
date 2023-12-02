@@ -9,7 +9,7 @@ const adminRoute=express()
 // homeRoute.set("view engine", "ejs");
 adminRoute.set("adminviews", "/views/admin");
 
-admin_route.get("/",getAdmin)
+admin_route.get("/",getproduct)
 admin_route.get("/product",getproduct)
 admin_route.get("/category",getcategory)
 admin_route.get("/addProduct",getAddProduct)
