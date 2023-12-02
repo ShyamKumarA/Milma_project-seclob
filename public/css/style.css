@@ -1,13 +1,325 @@
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.header{
-    height: 80vh;
-    width: 100%;
-    background: rgba(44, 101, 218, 1);
-    background-image: url(/image/banner.png);
-    background-position: center;
+
+.hero_banner{
+    background-image: url(./Public/assets/chocolate/background.png) ;
+    background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    background-color: #2c66da;
+    background-blend-mode: color-burn;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
+
+.logo{
+    width: 20%;
+    max-width: 150px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 120px;
+    min-width: 90px;
+}
+
+.left {
+    width: 40%;
+}
+
+.right{
+    width: 40%;
+}
+
+.right img {
+    width: 100%;
+}
+
+.left img {
+    width: 100%;
+}
+
+.center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+}
+
+.section_2_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_2_left{
+    width: 40%;
+}
+.section_2_right{
+    width: 30%;
+}
+
+.section_2_left img{
+    width: 100%;
+    max-width: 400px;
+    min-width: 250px;
+}
+
+
+.section_3{
+    background-color: #2c66da;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 0% 3% 0%;
+}
+
+.section_4{
+    margin: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chocolate_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+.chocolate_title img{
+  
+    width: 30%;
+    min-width: 260px;
+
+}
+
+.chocolate_section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3%;
+}
+
+
+.chocolate_list{
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.chocolate_item{
+    width: 30%;
+    border: 6px solid #653425;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+    min-width: 260px;
+    cursor: pointer;
+
+}
+
+.choco_img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choco_img img{
+    width: 90%;
+    border-radius: 20px;
+}
+
+
+.choco_down{
+    width: 98%;
+    padding: 4%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.vanilla_item{
+    width: 30%;
+    border: 6px solid #F7D047;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+    min-width: 260px;
+    cursor: pointer;
+
+}
+
+.pista_item{
+    width: 30%;
+    border: 6px solid #9FDC3C;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+    min-width: 260px;
+    cursor: pointer;
+
+}
+
+
+.footer{
+    background-color: #2c66da;
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer_logo{
+    width: 12%;
+}
+
+.footer_logo img{
+    width: 100%;
+
+}
+
+.footer_right{
+    width: 19%;
+}
+
+.footer_right img{
+    width: 100%;
+}
+
+
+.admin_header{
+    background-color: #2c66da;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.admin_logo{
+    width: 7%;
+}
+.admin_logo img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1400px) {
+    
+    .logo{
+        width: 10%;
+    }
+    .left{
+        width: 33%;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .hero_banner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo{
+        width: 10%;
+    }
+    
+    .left{
+        display: none;
+    }
+    .right{
+        width: 80%;
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .section_2_center{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .section_2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 3%;
+    }
+    
+
+
+    .section_2_left{
+        width: 100%;
+     
+    }
+    .section_2_right{
+        margin: 1%;
+        width: 100%;
+    }
+    
+    .section_2_left img{
+        width: 100%;
+        max-width: 400px;
+        min-width: 250px;
+    }
+
+    .chocolate_list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   
+    .footer{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .footer_logo{
+        width: 32%;
+        margin-bottom: 3%;
+    }
+    
+    .footer_logo img{
+        width: 100%;
+    
+    }
+    
+    .footer_right{
+        width: 29%;
+    }
+    
+    .footer_right img{
+        width: 100%;
+    }
+    
+
+}
+

@@ -1,24 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Category Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* margin: 20px; */
+        }
+
+        @media screen and (max-width: 768px) {
+            .table-responsive {
+                overflow-x: auto;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .table-responsive {
+                border: 0;
+            }
+
+            th {
+                display: none;
+            }
+
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            tbody td {
+                text-align: right;
+            }
+
+            th {
+                text-align: left;
+            }
+
+            tbody td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div id="content">
-    <div id="category" class="content-section">
-        <h2>Category Management</h2>
-        <button class="add-btn" onclick="showAddCategoryForm()">Add Category</button>
-        <div id="category-list">
-            <!-- Category list will be dynamically populated here -->
+    <div class="admin_header">
+        <div class="admin_logo">
+            <img src="/assets/Frame.png" alt="milma-logo">
         </div>
     </div>
-</div>
 
-<script src="scripts.js"></script>
+    <div class="container-fluid">
+        <div class="top">
+            <h2 class="mb-4">Categories</h2>
+            <a href="/admin/addCategory">
+                <button type="button" class="btn btn-success mb-3">
+                    <i class="fas fa-plus"></i> Add Category
+                </button>
+            </a>
+        </div>
 
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Category Name">Electronics</td>
+                        <td data-label="Stock">100</td>
+                        <td data-label="Actions">
+                            <a href="/admin/editCategory"><button type="button" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+                            <button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bootstrap and Font Awesome JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

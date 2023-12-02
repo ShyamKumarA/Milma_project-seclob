@@ -1,24 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Product Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* margin: 20px; */
+        }
+
+        @media screen and (max-width: 768px) {
+            .table-responsive {
+                overflow-x: auto;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .table-responsive {
+                border: 0;
+            }
+
+
+
+
+
+            th {
+                display: none;
+            }
+
+
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            tbody td {
+                text-align: right;
+            }
+
+            th {
+                text-align: left;
+            }
+
+            tbody td:before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div id="content">
-    <div id="product" class="content-section">
-        <h2>Product Management</h2>
-        <button class="add-btn" onclick="showAddProductForm()">Add Product</button>
-        <div id="product-list">
-            <!-- Product list will be dynamically populated here -->
+    <div class="admin_header">
+        <div class="admin_logo">
+
+            <img src=" /assets/Frame.png" alt="milma-logo">
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="top">
+
+            <h2 class="mb-4">Products</h2>
+            <a href="/admin/addProduct">
+                <button type="button" class="btn btn-success mb-3" >
+                    <i class="fas fa-plus"></i> Add Product
+                </button>
+            </a>
+            
+            
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="ID">1</td>
+                        <td data-label="Product Name">Laptop</td>
+                        <td data-label="Price">$1000</td>
+                        <td data-label="Stock">50</td>
+                        <td data-label="Category">Electronics</td>
+                        <td data-label="Actions">
+                            <button type="button" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i>
+                                Edit</button>
+                            <button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
+                                Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="ID">2</td>
+                        <td data-label="Product Name">Smartphone</td>
+                        <td data-label="Price">$500</td>
+                        <td data-label="Stock">30</td>
+                        <td data-label="Category">Electronics</td>
+                        <td data-label="Actions">
+                            <a href="/admin/editProduct"><button type="button" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i>
+                                Edit</button></a>
+                            <button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i>
+                                Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
 
-<script src="scripts.js"></script>
 
+
+    <!-- Bootstrap and Font Awesome JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
