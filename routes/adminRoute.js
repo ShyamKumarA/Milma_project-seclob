@@ -16,23 +16,23 @@ admin_route.get("/addProduct",getAddProduct)
 admin_route.get("/editProduct",getEditProduct)
 admin_route.get("/addCategory",getAddCategory)
 admin_route.get("/editCategory",getEditCategory)
-
-
+admin_route.get('/deleteProduct',deleteProduct)
+admin_route.get('/deleteCategory',deleteCategory)
 
 
 
 admin_route.post('/addProduct',upload,createProduct)
-admin_route.post('/',createCategory)
+admin_route.post('/addCategory',createCategory)
+admin_route.post('/editProduct',updateProduct)
 
 
 
 
-admin_route.put('/:id',upload,updateProduct)
 admin_route.put('/:id',updateCategory)
 
 
-admin_route.delete('/:id',deleteProduct)
-admin_route.delete('/:id',deleteCategory)
+
+
 
 
 

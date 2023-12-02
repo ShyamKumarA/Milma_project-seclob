@@ -1,5 +1,7 @@
 const Product=require("../models/productModel")
 const multer =require('multer')
+const Category=require("../models/categoryModel")
+
 
 
 
@@ -7,13 +9,16 @@ const multer =require('multer')
 
 const createProduct=async(req,res)=>{
     try{
-        const image = [];
-        console.log(req.body); 
-    // for (let i = 0; i < req.files.length; i++) {
-    //   image[i] = req.files[i].filename;
-    // }
-    //     const newProduct=await Product.create(req.body);
-    //     res.redirect("/admin/product");
+        const product = new Product({
+            productName: req.body.productName,
+            price: req.body.price,
+            category: req.body.category,
+            quantity:req.body.quantity,
+            image: req.file.filename // Use req.file instead of req.body.filename
+          });
+        
+          product.save()
+        res.redirect("/admin/product");
     }catch(error){
         console.log(error);
     }
@@ -21,7 +26,9 @@ const createProduct=async(req,res)=>{
 
 const getAddProduct=async(req,res)=>{
     try {
-        res.render("admin/addProduct");
+        const catData = await Category.find();
+
+        res.render("admin/addProduct",{category:catData});
       } catch (error) {
         console.log(error);
       }
@@ -29,18 +36,29 @@ const getAddProduct=async(req,res)=>{
 
 const getEditProduct=async(req,res)=>{
     try {
-        res.render("admin/editProduct");
+        const id = req.query.id;
+        const productData = await Product.findOne({ _id: id })
+        const catData = await Category.find();
+        res.render("admin/editProduct",{
+            product: productData,
+            category: catData,
+          });
       } catch (error) {
         console.log(error);
       }
 }
 
 const updateProduct=async(req,res)=>{
-    const id=req.params;
+    const id=req.query.id;
+    console.log(id);
+    console.log(req.body);
     try{
-        const updateProduct=await Product.findOneAndUpdate({id},req.body,{
-            new:true
-        })
+        await Product.findByIdAndUpdate(id, {
+            productName: req.body.productName,
+            price: req.body.price,
+            category: req.body.category,
+            quantity:req.body.quantity,
+          });
 
         res.redirect("/admin/product");
 
@@ -50,7 +68,7 @@ const updateProduct=async(req,res)=>{
 }
 
 const deleteProduct=async(req,res)=>{
-    const id=req.params;
+    const id=req.query.id;
     try{
         const deleteProduct=await Product.findOneAndDelete(id)
 

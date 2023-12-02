@@ -51,67 +51,29 @@
 
 
     <div class="section_4">
+
         <div class="chocolate_section">
             <div class="chocolate_title">
                 <img src=" /assets/chocolate/Frame 42chocolate.png" alt="chocotitle">
             </div>
             <div class="chocolate_list">
-                <div class="chocolate_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
+                    <%product.forEach((product,index )=> { %>
+                        <% if(product.category=="Chololate") {%>
+                    <div class="chocolate_item">
+                        <div class="choco_img">
+                            <img src="/product_images/<%= product.image %>" alt="<%= product.image %>">
                         </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
-                <div class="chocolate_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
+                        <div class="choco_down">
+                            <div class="choco_product_name">
+                                <h4><%= product.productName %></h4>
+                                <p><%= product.quantity %> gm</p>
+                            </div>
+                            <div class="choco_product_price">
+                                ₹ <%= product.price %>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="chocolate_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
-                <div class="chocolate_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
+                    <% }});%>
             </div>
         </div>
 
@@ -120,62 +82,23 @@
                 <img src=" /assets/chocolate/Frame 42vanilla.png" alt="chocotitle">
             </div>
             <div class="chocolate_list">
+                <%product.forEach((product,index )=> { %>
+                    <% if(product.category=="Vannila") {%>
                 <div class="vanilla_item">
                     <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
+                        <img src="/product_images/<%= product.image %>" alt="<%= product.image %>">
                     </div>
                     <div class="choco_down">
                         <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
+                            <h4><%= product.productName %></h4>
+                            <p><%= product.quantity %> gm</p>
                         </div>
                         <div class="choco_product_price">
-                            ₹100.00
+                            ₹ <%= product.price %>
                         </div>
                     </div>
                 </div>
-                <div class="vanilla_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
-                <div class="vanilla_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
-                <div class="vanilla_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
+                <% }});%>
             </div>
         </div>
 
@@ -184,62 +107,23 @@
                 <img src=" /assets/chocolate/Frame 42pista.png" alt="chocotitle">
             </div>
             <div class="chocolate_list">
+                <%product.forEach((product,index )=> { %>
+                    <% if(product.category=="Pista") {%>
                 <div class="pista_item">
                     <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
+                        <img src="/product_images/<%= product.image %>" alt="<%= product.image %>">
                     </div>
                     <div class="choco_down">
                         <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
+                            <h4><%= product.productName %></h4>
+                            <p><%= product.quantity %> gm</p>
                         </div>
                         <div class="choco_product_price">
-                            ₹100.00
+                            ₹ <%= product.price %>
                         </div>
                     </div>
                 </div>
-                <div class="pista_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
-                <div class="pista_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
-                <div class="pista_item">
-                    <div class="choco_img">
-                        <img src=" /assets/chocolate/Chocolate 1 copy 1.png" alt="product">
-                    </div>
-                    <div class="choco_down">
-                        <div class="choco_product_name">
-                            <h4>Chocolate Tub</h4>
-                            <p>500ml</p>
-                        </div>
-                        <div class="choco_product_price">
-                            ₹100.00
-                        </div>
-                    </div>
-                </div>
+                <% }});%>
             </div>
         </div>
 

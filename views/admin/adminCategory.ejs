@@ -79,14 +79,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <%data.forEach((data,index )=> { %>
                     <tr>
-                        <td data-label="Category Name">Electronics</td>
-                        <td data-label="Stock">100</td>
+                        <td data-label="Category Name"><%=data.categoryName%></td>
+                        <td data-label="Stock"><%=data.product_count%></td>
                         <td data-label="Actions">
                             <a href="/admin/editCategory"><button type="button" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
-                            <button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                            <a href="/admin/deleteCategory?id=<%=data._id%>"><button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</button></a>
                         </td>
                     </tr>
+                    <% });%>
                     <!-- Add more rows as needed -->
                 </tbody>
             </table>

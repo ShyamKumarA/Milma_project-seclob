@@ -2,7 +2,10 @@ const Category=require("../models/categoryModel")
 
 const createCategory=async(req,res)=>{
     try{
+        
         const newCategory=await Category.create(req.body);
+        console.log(newCategory);
+        res.redirect("/admin/category");
 
     }catch(error){
         console.log(error);
@@ -25,7 +28,8 @@ const getEditCategory=async(req,res)=>{
 }
 
 const updateCategory=async(req,res)=>{
-    const id=req.params;
+    const id=req.query.id;
+    console.log(id);
     try{
         const updateProduct=await Category.findOneAndUpdate({id},req.body,{
             new:true
@@ -39,7 +43,7 @@ const updateCategory=async(req,res)=>{
 }
 
 const deleteCategory=async(req,res)=>{
-    const id=req.params;
+    const id=req.query.id;
     try{
         const deleteCategory=await Category.findOneAndDelete(id)
 

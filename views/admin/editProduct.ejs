@@ -35,22 +35,29 @@
     <div class="container-fluid">
         <h2 class="mb-4">Edit Product</h2>
 
-    <form>
+    <form action="/admin/editProduct?id=<%=product._id%>"
+        method="post">
         <div class="form-group">
             <label for="productName">Product Name:</label>
-            <input type="text" class="form-control" id="productName" placeholder="Enter product name">
+            <input type="text" name="productName" class="form-control" value="<%=product.productName %>" id="productName" placeholder="Enter product name">
         </div>
         <div class="form-group">
             <label for="price">Price:</label>
-            <input type="text" class="form-control" id="price" placeholder="Enter price">
+            <input type="text" name="price" class="form-control" value="<%=product.price %>" id="price" placeholder="Enter price">
         </div>
         <div class="form-group">
             <label for="stock">Stock:</label>
-            <input type="text" class="form-control" id="stock" placeholder="Enter stock">
+            <input type="text" name="quantity" class="form-control" value="<%=product.quantity %>" id="stock" placeholder="Enter stock">
         </div>
         <div class="form-group">
             <label for="category">Category:</label>
-            <input type="text" class="form-control" id="category" placeholder="Enter category">
+            <select class="form-control" name="category" id="category">
+                <% category.forEach(function(category,index){ %>
+                    <option value="<%=category.categoryName%>"><%=category.categoryName%>
+                    </option>
+                    <% }) %>
+                
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Edit Product</button>
     </form>

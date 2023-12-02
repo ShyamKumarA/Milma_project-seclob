@@ -1,10 +1,12 @@
+const { log } = require("console");
 const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    let dir = path.join(__dirname, "../public/product_images");
+      let dir = path.join(__dirname, "../public/product_images");
+      console.log(dir)
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
