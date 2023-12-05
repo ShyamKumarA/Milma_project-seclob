@@ -1,5 +1,4 @@
 const Product=require("../models/productModel")
-const multer =require('multer')
 const Category=require("../models/categoryModel")
 
 
@@ -14,7 +13,7 @@ const createProduct=async(req,res)=>{
             price: req.body.price,
             category: req.body.category,
             quantity:req.body.quantity,
-            image: req.file.filename // Use req.file instead of req.body.filename
+            image: req.file.filename 
           });
         
           product.save()
