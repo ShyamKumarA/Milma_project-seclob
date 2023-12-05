@@ -32,6 +32,9 @@ app.use(
 app.use('/admin',adminRoute)
 app.use('/',homeRoute)
 
+app.use((req, res, next) => {
+  res.status(404).render('pageNotFound'); 
+});
 
 app.listen(PORT,()=>{
     console.log(`SERVER IS RUNNING at PORT ${PORT}`);
