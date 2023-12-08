@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/admin/css/styles.css">
+<%-include('../layouts/adminHeader.ejs')%>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,10 +52,15 @@
 
     <div class="admin_header">
         <div class="admin_logo">
-
-            <img src=" /assets/Frame.png" alt="milma-logo">
+            <img src="/assets/Frame.png" alt="milma-logo">
         </div>
-
+        <div class="logout_button">
+            <a href="/admin/logout">
+                <button type="button" class="btn btn-danger">
+                    Logout <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </a>
+        </div>
     </div>
 
     <div class="container-fluid">
@@ -129,13 +126,6 @@
         </div>
     </div>
 
+    <%-include('../layouts/adminFooter.ejs')%>
 
-
-    <!-- Bootstrap and Font Awesome JS scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
-</body>
-
-</html>
+    

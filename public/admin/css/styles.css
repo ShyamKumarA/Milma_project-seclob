@@ -25,6 +25,7 @@
     left: 20px;
 }
 
+
 .logo img {
     width: 100%;
     max-width: 120px;
@@ -218,20 +219,27 @@
 }
 
 
-.admin_header{
+.admin_header {
     background-color: #2c66da;
     padding: 2%;
     display: flex;
-    justify-content: center;
     align-items: center;
     margin-bottom: 2%;
 }
-.admin_logo{
+
+.admin_logo {
     width: 7%;
+    flex-shrink: 0; /* Prevent the logo from shrinking */
 }
-.admin_logo img{
+
+.admin_logo img {
     width: 100%;
 }
+
+.logout_button {
+    margin-left: auto; /* Push the logout button to the right */
+}
+
 
 @media only screen and (max-width: 1400px) {
     
@@ -334,4 +342,67 @@
     }
     
 
+}
+
+
+/* Form responsiveness */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.container {
+    width: 300px;
+}
+/* Media query for small screens (max-width: 576px) */
+@media only screen and (max-width: 576px) {
+    .admin_logo {
+        width: 50%;
+    }
+
+    .center-div {
+        padding: 60px 20px;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
+
+/* Media query for medium screens (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    .admin_logo {
+        width: 40%;
+    }
+    .center-div {
+        padding: 60px 20px;
+    }
+    .container {
+        width: 90%;
+    }
+}
+
+/* Media query for large screens (max-width: 992px) */
+@media only screen and (max-width: 992px) {
+    .admin_logo {
+        width: 30%;
+    }
+    .center-div {
+        padding: 60px 20px;
+    }
+
+    .container {
+        width: 80%;
+    }
+}
+
+/* Media query for extra-large screens (max-width: 1200px) */
+@media only screen and (max-width: 1200px) {
+    .admin_logo {
+        width: 20%;
+    }
+    .center-div {
+        padding: 60px 20px;
+    }
+    .container {
+        width: 70%;
+    }
 }
